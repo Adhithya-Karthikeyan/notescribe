@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <title>NoteScribe Privacy Policy</title>
+  <meta name="description" content="Privacy policy for the NoteScribe iOS app by Adhithya Karthikeyan. 100% on-device AI, no developer servers, no tracking, no analytics.">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1c1c1e;
+      --muted: #6b6b70;
+      --accent: #0a84ff;
+      --rule: #e5e5ea;
+      --card: #f7f7f9;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --fg: #f2f2f7;
+        --muted: #9a9aa0;
+        --accent: #0a84ff;
+        --rule: #2c2c2e;
+        --card: #1c1c1e;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 8px; }
+    h2 {
+      font-size: 1.3rem;
+      margin: 40px 0 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+    }
+    h3 { font-size: 1.05rem; margin: 24px 0 8px; }
+    p { margin: 12px 0; }
+    ul { margin: 12px 0; padding-left: 22px; }
+    li { margin: 6px 0; }
+    a { color: var(--accent); }
+    code {
+      background: var(--card);
+      padding: 1px 6px;
+      border-radius: 5px;
+      font-size: 0.85em;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    .effective { color: var(--muted); font-weight: 600; margin: 0 0 24px; }
+    .lede {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin: 20px 0 8px;
+    }
+    .note {
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-style: italic;
+    }
+    footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>NoteScribe Privacy Policy</h1>
+    <p class="effective">Effective date: June 13, 2026</p>
+
+    <p>NoteScribe is made by Adhithya Karthikeyan ("we," "us," "our"). This policy explains how the NoteScribe iOS app (App Store ID: <code>com.adhithyakarthikeyan.NoteScribe</code>, version 1.0) handles your information. It is written to be plain and honest.</p>
+
+    <div class="lede">
+      <p style="margin:0;">The short version: <strong>NoteScribe runs its AI entirely on your device, has no developer servers, and does not track you or run analytics.</strong> We never see your notes, recordings, transcripts, or summaries.</p>
+    </div>
+
+    <h2>Overview</h2>
+    <p>NoteScribe turns your notes and meetings into structured output. You can scan handwritten notes and whiteboards, paste or type text, record audio, or import photos of notes. On supported devices, NoteScribe uses Apple Intelligence — running locally on your iPhone or iPad — to produce Objectives, Action Items, Minutes of Meeting, Blockers, and a one-tap recap email draft.</p>
+    <ul>
+      <li>Requires iOS 26 or later (iPhone and iPad).</li>
+      <li>On Apple Intelligence-capable devices, AI summarization is unlocked. On other devices, you still get transcript-first capture (scanning, typing, recording, transcription, and import).</li>
+      <li>We operate <strong>no backend servers</strong>. Your content stays on your device unless you explicitly choose Apple's optional iCloud backup (described below).</li>
+    </ul>
+
+    <h2>What we collect — and what we do NOT</h2>
+
+    <h3>What we do NOT collect</h3>
+    <ul>
+      <li>We do <strong>not</strong> collect, receive, or store your notes, photos, scans, audio recordings, transcripts, or AI-generated summaries on any server we control. We have none.</li>
+      <li>We do <strong>not</strong> track you across apps or websites. The app's privacy manifest declares <code>NSPrivacyTracking = false</code> with no tracking domains.</li>
+      <li>We do <strong>not</strong> use any analytics, advertising, crash-reporting, or attribution SDKs.</li>
+      <li>We do <strong>not</strong> collect device identifiers, advertising identifiers, location, contacts, or usage telemetry.</li>
+      <li>We do <strong>not</strong> sell or share any personal data, because we never receive any.</li>
+    </ul>
+    <p>The app's App Store privacy manifest lists <strong>no collected data types</strong>.</p>
+
+    <h3>What is stored (locally, by you)</h3>
+    <p>The information NoteScribe handles lives on your device and is created by you using the app:</p>
+    <ul>
+      <li><strong>Notes and analysis</strong> — your captured text, scans, photos, transcripts, and the AI output (objectives, action items, minutes, blockers, email drafts). Stored locally on your device using Apple's SwiftData.</li>
+      <li><strong>Audio recordings</strong> — saved as files in the app's local Application Support directory on your device.</li>
+      <li><strong>Sign-in identity</strong> — if you sign in with Apple, a minimal profile (an Apple-provided user identifier, and your name/email <strong>only if</strong> you choose to share them on first sign-in) is stored securely in the device Keychain. See <em>Sign in with Apple</em> below.</li>
+    </ul>
+    <p>The only system API NoteScribe declares for storing app data is <code>UserDefaults</code> (declared reason <code>CA92.1</code>: storing user settings for the app itself).</p>
+
+    <h2>On-device processing</h2>
+    <p>All content processing in NoteScribe happens <strong>on your device</strong>:</p>
+    <ul>
+      <li><strong>Transcription</strong> uses Apple's on-device speech engine (<code>SpeechTranscriber</code> / <code>SpeechAnalyzer</code>, iOS 26). Audio is transcribed locally; it is not uploaded for transcription.</li>
+      <li><strong>AI summarization</strong> uses Apple's on-device Foundation Models framework (Apple Intelligence). Your content is analyzed locally by the model that ships with the operating system.</li>
+      <li><strong>Text recognition (OCR)</strong> for scans and photos runs locally using Apple's Vision framework.</li>
+    </ul>
+    <p>No notes, audio, transcripts, or summaries are sent to us or to any third party for processing.</p>
+
+    <h2>iCloud backup (optional, private, and user-controlled)</h2>
+    <p>NoteScribe can optionally back up your history so it is available across your own Apple devices.</p>
+    <ul>
+      <li>iCloud backup is <strong>off for Guest mode</strong> and is enabled <strong>only when you sign in with Apple</strong>.</li>
+      <li>When enabled, your notes and analysis are stored in <strong>your own private iCloud database</strong> through Apple's CloudKit, in the container <code>iCloud.com.adhithyakarthikeyan.NoteScribe</code>.</li>
+      <li>This is the <strong>CloudKit private database</strong> — it is Apple's infrastructure tied to your Apple Account. <strong>It is not a developer server, and we cannot read it.</strong> No developer-accessible copy of your data exists.</li>
+      <li>If you use <strong>Guest mode</strong>, your data is <strong>strictly local</strong> and never leaves your device.</li>
+      <li>Audio recordings are stored locally on the device.</li>
+    </ul>
+    <p>Apple's handling of data stored in iCloud is governed by Apple's own privacy policy and terms.</p>
+
+    <h2>Sign in with Apple</h2>
+    <p>NoteScribe offers two ways to use the app: <strong>Sign in with Apple</strong> or <strong>continue as Guest</strong>. An account is optional — the full app works without one (in Guest mode, history simply stays on your device only).</p>
+    <p>When you Sign in with Apple:</p>
+    <ul>
+      <li>We use Apple's <code>AuthenticationServices</code> framework. Apple provides a stable user identifier, and — <strong>only on your first authorization, and only if you allow it</strong> — your name and email.</li>
+      <li>This identity is stored <strong>securely in your device Keychain</strong>. It is not transmitted to any developer server (we have none).</li>
+      <li>We do not exchange the Apple authorization code with any backend, and no developer-held access or refresh token for your Apple identity ever exists.</li>
+    </ul>
+
+    <h2>Camera, Microphone, Photos, and Reminders permissions</h2>
+    <p>NoteScribe asks for system permissions only for the features you use, and explains each at the prompt:</p>
+    <ul>
+      <li><strong>Camera</strong> — to scan your written notes and whiteboards with the document scanner. Images are processed on your device.</li>
+      <li><strong>Microphone</strong> — to record audio <strong>only when you tap record</strong>. Recording is transcribed entirely on your device.</li>
+      <li><strong>Photo Library</strong> — so you can pick photos of notes or whiteboards to analyze on your device.</li>
+      <li><strong>Reminders</strong> — NoteScribe adds your action items to Apple Reminders <strong>only when you explicitly ask it to</strong>. Reminders you create are written to your own Apple Reminders.</li>
+    </ul>
+    <p>You can grant or revoke any of these permissions at any time in iOS Settings.</p>
+
+    <h2>Data retention and deletion</h2>
+    <ul>
+      <li>Your data stays on your device (and, if you enabled it, in your own private iCloud database) until you delete it.</li>
+      <li>You can delete individual notes inside the app at any time.</li>
+    </ul>
+
+    <h3>In-app account deletion</h3>
+    <p>NoteScribe includes a built-in <strong>delete</strong> option that permanently removes your data:</p>
+    <ul>
+      <li>It deletes <strong>all your notes and analysis</strong>, your <strong>local audio recordings</strong>, and your <strong>sign-in identity</strong> from this device.</li>
+      <li>If iCloud backup was enabled, the deletions are also queued to your private iCloud database and flush on the next iCloud sync. Any residue lives only in <strong>your own</strong> private iCloud database — no developer-accessible copy exists.</li>
+      <li>This action cannot be undone.</li>
+    </ul>
+    <p>You can also detach NoteScribe from your Apple Account at any time under <strong>iOS Settings &rarr; your name &rarr; Sign in with Apple &rarr; NoteScribe</strong>.</p>
+
+    <h2>Children's privacy</h2>
+    <p>NoteScribe is a general-productivity app and is not directed to children. We do not knowingly collect personal information from children. Because the app collects no personal data on any server and processes content on-device, no personal data about any user — child or adult — is transmitted to us.</p>
+
+    <h2>Third-party services</h2>
+    <p><strong>NoteScribe uses no third-party data-collection, analytics, advertising, or tracking services.</strong></p>
+    <ul>
+      <li>The app links no third-party networking or analytics SDKs.</li>
+      <li>The only platform services NoteScribe relies on are provided by <strong>Apple</strong> and run on your device or in your own iCloud: Apple Intelligence / Foundation Models, the on-device Speech and Vision frameworks, Sign in with Apple, Apple Reminders, and Apple CloudKit (your private database). These are governed by Apple's privacy policy.</li>
+    </ul>
+    <p>We do not share your data with anyone, because we do not collect it.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>We may update this policy from time to time. When we do, we will revise the "Effective date" above and post the updated policy at this location. Material changes will be reflected here before they take effect.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy or your privacy?</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:skadhithya95@icloud.com">skadhithya95@icloud.com</a></li>
+      <li><strong>Developer:</strong> Adhithya Karthikeyan</li>
+    </ul>
+
+    <footer>
+      &copy; Adhithya Karthikeyan. NoteScribe v1.0.
+    </footer>
+  </main>
+</body>
+</html>

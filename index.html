@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <title>NoteScribe</title>
+  <meta name="description" content="NoteScribe — record your meetings and calls and turn them into on-device AI summaries. Privacy policy and support.">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1c1c1e;
+      --muted: #6b6b70;
+      --accent: #0a84ff;
+      --rule: #e5e5ea;
+      --card: #f7f7f9;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --fg: #f2f2f7;
+        --muted: #9a9aa0;
+        --accent: #0a84ff;
+        --rule: #2c2c2e;
+        --card: #1c1c1e;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    main { max-width: 720px; margin: 0 auto; padding: 56px 20px 64px; }
+    h1 { font-size: 2.1rem; line-height: 1.2; margin: 0 0 6px; }
+    .tagline { color: var(--muted); font-size: 1.15rem; margin: 0 0 40px; }
+    .cards { display: grid; gap: 14px; }
+    a.card {
+      display: block;
+      text-decoration: none;
+      color: var(--fg);
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 18px 20px;
+      transition: border-color .15s ease;
+    }
+    a.card:hover { border-color: var(--accent); }
+    a.card .label { font-weight: 600; font-size: 1.1rem; }
+    a.card .sub { color: var(--muted); font-size: 0.95rem; margin-top: 2px; }
+    footer { margin-top: 48px; color: var(--muted); font-size: 0.9rem; }
+    footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>NoteScribe</h1>
+    <p class="tagline">Record your meetings and calls — on-device Apple Intelligence writes the summary, action items, and a recap email. Nothing is uploaded.</p>
+    <div class="cards">
+      <a class="card" href="privacy-policy.html">
+        <div class="label">Privacy Policy</div>
+        <div class="sub">How NoteScribe handles your data — 100% on-device, no tracking.</div>
+      </a>
+      <a class="card" href="support.html">
+        <div class="label">Support</div>
+        <div class="sub">Help, FAQs, and how to contact us.</div>
+      </a>
+    </div>
+    <footer>
+      <p>NoteScribe by Adhithya Karthikeyan · <a href="mailto:skadhithya95@icloud.com">skadhithya95@icloud.com</a></p>
+    </footer>
+  </main>
+</body>
+</html>
