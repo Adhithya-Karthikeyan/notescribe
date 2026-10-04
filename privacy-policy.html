@@ -83,18 +83,18 @@
 <body>
   <main>
     <h1>NoteScribe Privacy Policy</h1>
-    <p class="effective">Effective date: June 13, 2026</p>
+    <p class="effective">Effective date: October 2026</p>
 
-    <p>NoteScribe is made by Adhithya Karthikeyan ("we," "us," "our"). This policy explains how the NoteScribe iOS app (App Store ID: <code>com.adhithyakarthikeyan.NoteScribe</code>, version 1.0) handles your information. It is written to be plain and honest.</p>
+    <p>NoteScribe is made by Adhithya Karthikeyan ("we," "us," "our"). This policy explains how the NoteScribe iOS app (Bundle ID: <code>com.adhithyakarthikeyan.NoteScribe</code>, version 1.0) handles your information. It is written to be plain and honest.</p>
 
     <div class="lede">
       <p style="margin:0;">The short version: <strong>NoteScribe runs its AI entirely on your device, has no developer servers, and does not track you or run analytics.</strong> We never see your notes, recordings, transcripts, or summaries.</p>
     </div>
 
     <h2>Overview</h2>
-    <p>NoteScribe turns your notes and meetings into structured output. You can scan handwritten notes and whiteboards, paste or type text, record audio, or import photos of notes. On supported devices, NoteScribe uses Apple Intelligence — running locally on your iPhone or iPad — to produce Objectives, Action Items, Minutes of Meeting, Blockers, and a one-tap recap email draft.</p>
+    <p>NoteScribe turns your notes and meetings into structured output. You can scan handwritten notes and whiteboards, paste or type text, record audio, or import photos of notes. On supported devices, NoteScribe uses Apple Intelligence — running locally on your iPhone — to produce Objectives, Action Items, Minutes of Meeting, Blockers, and a one-tap recap email draft.</p>
     <ul>
-      <li>Requires iOS 26 or later (iPhone and iPad).</li>
+      <li>Requires iOS 26 or later (iPhone only; built for iOS 27).</li>
       <li>On Apple Intelligence-capable devices, AI summarization is unlocked. On other devices, you still get transcript-first capture (scanning, typing, recording, transcription, and import).</li>
       <li>We operate <strong>no backend servers</strong>. Your content stays on your device unless you explicitly choose Apple's optional iCloud backup (described below).</li>
     </ul>
@@ -116,7 +116,9 @@
     <ul>
       <li><strong>Notes and analysis</strong> — your captured text, scans, photos, transcripts, and the AI output (objectives, action items, minutes, blockers, email drafts). Stored locally on your device using Apple's SwiftData.</li>
       <li><strong>Audio recordings</strong> — saved as files in the app's local Application Support directory on your device.</li>
+      <li><strong>Background recording</strong> — when enabled, the app can record audio while locked or in the background. Recording pauses if you receive a phone or FaceTime call on the same device.</li>
       <li><strong>Sign-in identity</strong> — if you sign in with Apple, a minimal profile (an Apple-provided user identifier, and your name/email <strong>only if</strong> you choose to share them on first sign-in) is stored securely in the device Keychain. See <em>Sign in with Apple</em> below.</li>
+      <li><strong>Age range signal</strong> — if iOS provides a Declared Age Range signal (on supported devices), it is processed and stored on the device only. It is not sent to us or to any server.</li>
     </ul>
     <p>The only system API NoteScribe declares for storing app data is <code>UserDefaults</code> (declared reason <code>CA92.1</code>: storing user settings for the app itself).</p>
 
