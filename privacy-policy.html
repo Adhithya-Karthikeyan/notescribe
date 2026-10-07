@@ -83,7 +83,7 @@
 <body>
   <main>
     <h1>NoteScribe Privacy Policy</h1>
-    <p class="effective">Effective date: October 2026</p>
+    <p class="effective">Effective date: October 7, 2026</p>
 
     <p>NoteScribe is made by Adhithya Karthikeyan ("we," "us," "our"). This policy explains how the NoteScribe iOS app (Bundle ID: <code>com.adhithyakarthikeyan.NoteScribe</code>, version 1.0) handles your information. It is written to be plain and honest.</p>
 
@@ -96,7 +96,7 @@
     <ul>
       <li>Requires iOS 26 or later (iPhone only; built for iOS 27).</li>
       <li>On Apple Intelligence-capable devices, AI summarization is unlocked. On other devices, you still get transcript-first capture (scanning, typing, recording, transcription, and import).</li>
-      <li>We operate <strong>no backend servers</strong>. Your content stays on your device unless you explicitly choose Apple's optional iCloud backup (described below).</li>
+      <li>We operate <strong>no backend servers</strong>. Your content stays on your device unless you sign in with Apple and choose to use your private iCloud library (described below).</li>
     </ul>
 
     <h2>What we collect — and what we do NOT</h2>
@@ -109,16 +109,18 @@
       <li>We do <strong>not</strong> collect device identifiers, advertising identifiers, location, contacts, or usage telemetry.</li>
       <li>We do <strong>not</strong> sell or share any personal data, because we never receive any.</li>
     </ul>
-    <p>The app's App Store privacy manifest lists <strong>no collected data types</strong>.</p>
+    <p>The app's App Store privacy manifest lists <strong>no collected data types</strong>. Content you store in your own iCloud account is held by Apple under your Apple Account; it is not collected by us.</p>
 
-    <h3>What is stored (locally, by you)</h3>
-    <p>The information NoteScribe handles lives on your device and is created by you using the app:</p>
+    <h3>What is stored on your device</h3>
+    <p>The information NoteScribe handles is created by you using the app and is stored on your device:</p>
     <ul>
-      <li><strong>Notes and analysis</strong> — your captured text, scans, photos, transcripts, and the AI output (objectives, action items, minutes, blockers, email drafts). Stored locally on your device using Apple's SwiftData.</li>
-      <li><strong>Audio recordings</strong> — saved as files in the app's local Application Support directory on your device.</li>
-      <li><strong>Background recording</strong> — when enabled, the app can record audio while locked or in the background. Recording pauses if you receive a phone or FaceTime call on the same device.</li>
+      <li><strong>Notes and analysis</strong> — your captured text, scans, photos, transcripts, and the AI output (objectives, action items, minutes, blockers, email drafts). Stored locally on your device using Apple's SwiftData. Guest mode and Sign in with Apple mode each keep their own separate on-device library (see <em>Guest mode and Sign in with Apple</em> below).</li>
+      <li><strong>Audio recordings</strong> — saved as files in the app's local Application Support directory on your device and protected by iOS data protection. Audio files are <strong>never uploaded to iCloud</strong>.</li>
+      <li><strong>Background recording</strong> — when enabled, the app can record audio while locked or in the background, with the standard iOS recording indicator visible. Recording pauses if you receive a phone or FaceTime call on the same device.</li>
       <li><strong>Sign-in identity</strong> — if you sign in with Apple, a minimal profile (an Apple-provided user identifier, and your name/email <strong>only if</strong> you choose to share them on first sign-in) is stored securely in the device Keychain. See <em>Sign in with Apple</em> below.</li>
-      <li><strong>Age range signal</strong> — if iOS provides a Declared Age Range signal (on supported devices), it is processed and stored on the device only. It is not sent to us or to any server.</li>
+      <li><strong>Age range answer</strong> — if iOS provides a Declared Age Range answer (on supported devices), it is stored on the device only and used only to tailor the app. NoteScribe never sends it anywhere.</li>
+      <li><strong>Free-note counter</strong> — a small counter of how many free notes you have used is kept in the device Keychain so the free tier can be enforced. It contains no note content. It intentionally <strong>survives account deletion and reinstalling the app</strong>; it is the only item NoteScribe keeps after you delete your data.</li>
+      <li><strong>Copied text</strong> — when you copy text from NoteScribe, it uses a local-only clipboard, so it does not sync to your other devices through Universal Clipboard.</li>
     </ul>
     <p>The only system API NoteScribe declares for storing app data is <code>UserDefaults</code> (declared reason <code>CA92.1</code>: storing user settings for the app itself).</p>
 
@@ -126,29 +128,36 @@
     <p>All content processing in NoteScribe happens <strong>on your device</strong>:</p>
     <ul>
       <li><strong>Transcription</strong> uses Apple's on-device speech engine (<code>SpeechTranscriber</code> / <code>SpeechAnalyzer</code>, iOS 26). Audio is transcribed locally; it is not uploaded for transcription.</li>
-      <li><strong>AI summarization</strong> uses Apple's on-device Foundation Models framework (Apple Intelligence). Your content is analyzed locally by the model that ships with the operating system.</li>
+      <li><strong>AI summarization</strong> uses Apple's on-device Foundation Models framework (Apple Intelligence). Your content is analyzed locally by the model that ships with the operating system. NoteScribe uses no third-party AI service. AI output is a draft; review it before relying on it.</li>
       <li><strong>Text recognition (OCR)</strong> for scans and photos runs locally using Apple's Vision framework.</li>
     </ul>
     <p>No notes, audio, transcripts, or summaries are sent to us or to any third party for processing.</p>
 
-    <h2>iCloud backup (optional, private, and user-controlled)</h2>
-    <p>NoteScribe can optionally back up your history so it is available across your own Apple devices.</p>
+    <h2>Guest mode and Sign in with Apple</h2>
+    <p>NoteScribe offers two ways to use the app: <strong>Sign in with Apple</strong> or <strong>continue as Guest</strong>. An account is optional — the full app works without one.</p>
     <ul>
-      <li>iCloud backup is <strong>off for Guest mode</strong> and is enabled <strong>only when you sign in with Apple</strong>.</li>
-      <li>When enabled, your notes and analysis are stored in <strong>your own private iCloud database</strong> through Apple's CloudKit, in the container <code>iCloud.com.adhithyakarthikeyan.NoteScribe</code>.</li>
+      <li><strong>Guest mode</strong> keeps your notes <strong>on this device only</strong>. Nothing is uploaded.</li>
+      <li><strong>Sign in with Apple mode</strong> has its <strong>own, separate on-device library</strong>. Notes in this library can be kept in your private iCloud (see below).</li>
+      <li>The two libraries are separate. If you use Guest mode and later sign in with Apple, NoteScribe <strong>asks</strong> whether to back up your guest notes to your private iCloud. <strong>Nothing is uploaded unless you choose to.</strong></li>
+      <li><strong>Signing out</strong> hides the iCloud library from this device. Your guest notes stay on the device.</li>
+    </ul>
+
+    <h2>iCloud library (optional, private, and user-controlled)</h2>
+    <p>When you sign in with Apple, NoteScribe can keep your history in your own private iCloud so it is available across your own Apple devices.</p>
+    <ul>
+      <li>iCloud storage applies <strong>only to the Sign in with Apple library</strong> (and to guest notes only if you say yes when asked).</li>
+      <li>Your notes and analysis are stored in <strong>your own private iCloud database</strong> through Apple's CloudKit, in the container <code>iCloud.com.adhithyakarthikeyan.NoteScribe</code>. Only note text and metadata sync. <strong>Audio recordings are never uploaded to iCloud.</strong></li>
       <li>This is the <strong>CloudKit private database</strong> — it is Apple's infrastructure tied to your Apple Account. <strong>It is not a developer server, and we cannot read it.</strong> No developer-accessible copy of your data exists.</li>
-      <li>If you use <strong>Guest mode</strong>, your data is <strong>strictly local</strong> and never leaves your device.</li>
-      <li>Audio recordings are stored locally on the device.</li>
+      <li>Guest-mode notes that you have not chosen to back up never leave your device.</li>
     </ul>
     <p>Apple's handling of data stored in iCloud is governed by Apple's own privacy policy and terms.</p>
 
     <h2>Sign in with Apple</h2>
-    <p>NoteScribe offers two ways to use the app: <strong>Sign in with Apple</strong> or <strong>continue as Guest</strong>. An account is optional — the full app works without one (in Guest mode, history simply stays on your device only).</p>
     <p>When you Sign in with Apple:</p>
     <ul>
       <li>We use Apple's <code>AuthenticationServices</code> framework. Apple provides a stable user identifier, and — <strong>only on your first authorization, and only if you allow it</strong> — your name and email.</li>
       <li>This identity is stored <strong>securely in your device Keychain</strong>. It is not transmitted to any developer server (we have none).</li>
-      <li>We do not exchange the Apple authorization code with any backend, and no developer-held access or refresh token for your Apple identity ever exists.</li>
+      <li>We do not exchange the Apple authorization code with any backend, and no developer-held access or refresh token for your Apple identity ever exists. Because there are no tokens for us to revoke, you stop using Sign in with Apple with NoteScribe yourself: see <em>Data retention and deletion</em> below.</li>
     </ul>
 
     <h2>Camera, Microphone, Photos, and Reminders permissions</h2>
@@ -163,24 +172,27 @@
 
     <h2>Data retention and deletion</h2>
     <ul>
-      <li>Your data stays on your device (and, if you enabled it, in your own private iCloud database) until you delete it.</li>
+      <li>Your data stays on your device (and, if you use it, in your own private iCloud database) until you delete it.</li>
       <li>You can delete individual notes inside the app at any time.</li>
     </ul>
 
     <h3>In-app account deletion</h3>
-    <p>NoteScribe includes a built-in <strong>delete</strong> option that permanently removes your data:</p>
+    <p>Open the account menu and choose <strong>Delete Account</strong>. This permanently:</p>
     <ul>
-      <li>It deletes <strong>all your notes and analysis</strong>, your <strong>local audio recordings</strong>, and your <strong>sign-in identity</strong> from this device.</li>
-      <li>If iCloud backup was enabled, the deletions are also queued to your private iCloud database and flush on the next iCloud sync. Any residue lives only in <strong>your own</strong> private iCloud database — no developer-accessible copy exists.</li>
-      <li>This action cannot be undone.</li>
+      <li>Erases your <strong>notes, projects, and audio recordings</strong> on this iPhone, and your sign-in identity.</li>
+      <li>Deletes the app's <strong>data zone in your private iCloud database</strong>.</li>
+      <li>If iCloud cannot be reached, the app tells you and lets you <strong>retry</strong>. If you continue without iCloud, the app explains that copies may remain in iCloud and how to remove them yourself: <strong>Settings &rsaquo; Apple Account &rsaquo; iCloud &rsaquo; Manage Storage &rsaquo; NoteScribe</strong>.</li>
+      <li>This action cannot be undone. No developer-accessible copy ever existed.</li>
     </ul>
-    <p>You can also detach NoteScribe from your Apple Account at any time under <strong>iOS Settings &rarr; your name &rarr; Sign in with Apple &rarr; NoteScribe</strong>.</p>
+    <p><strong>Subscriptions:</strong> deleting your account does not cancel a subscription. Billing continues through Apple until you cancel it; the app shows a <strong>Manage Subscription</strong> button for this.</p>
+    <p><strong>Sign in with Apple:</strong> after deletion, the app explains how to stop using Sign in with Apple with NoteScribe: <strong>Settings &rsaquo; your name &rsaquo; Sign in with Apple &rsaquo; NoteScribe &rsaquo; Stop Using Sign in with Apple</strong>.</p>
+    <p><strong>Free-note counter:</strong> the small Keychain counter described above stays on the device after deletion, by design.</p>
 
     <h2>Children's privacy</h2>
     <p>NoteScribe is a general-productivity app and is not directed to children. We do not knowingly collect personal information from children. Because the app collects no personal data on any server and processes content on-device, no personal data about any user — child or adult — is transmitted to us.</p>
 
     <h2>Third-party services</h2>
-    <p><strong>NoteScribe uses no third-party data-collection, analytics, advertising, or tracking services.</strong></p>
+    <p><strong>NoteScribe uses no third-party data-collection, analytics, advertising, or tracking services, and no third-party AI.</strong></p>
     <ul>
       <li>The app links no third-party networking or analytics SDKs.</li>
       <li>The only platform services NoteScribe relies on are provided by <strong>Apple</strong> and run on your device or in your own iCloud: Apple Intelligence / Foundation Models, the on-device Speech and Vision frameworks, Sign in with Apple, Apple Reminders, and Apple CloudKit (your private database). These are governed by Apple's privacy policy.</li>
